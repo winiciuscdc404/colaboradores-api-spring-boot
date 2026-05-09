@@ -1,6 +1,3 @@
-README completo:
-markdown
-
 # 🤝 Colaboradores API - Spring Boot
 
 API REST completa para gerenciamento de colaboradores com sistema de pontuação, hierarquia de chefes, autenticação JWT e frontend integrado.
