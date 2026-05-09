@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colaboradores.css">
+
+</head>
+
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+    <div class="logo">
+        <div class="logo-dot"></div>
+        Colaboradores
+    </div>
+    <div style="display:flex; align-items:center; gap:16px;">
+        <span id="nome-usuario" style="font-size:14px; color:var(--text-muted);"></span>
+        <button class="btn btn-ghost" onclick="logout()">Sair</button>
+        <button class="btn btn-primary" onclick="abrirModalCriar()">+ Novo Colaborador</button>
+    </div>
+</header>
+
+<!-- ── CONTEÚDO PRINCIPAL ── -->
+<main>
+
+    <!-- CARDS DE ESTATÍSTICAS -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-label">Total de Colaboradores</div>
+            <div class="stat-value" id="stat-total">—</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Maior Score</div>
+            <div class="stat-value" id="stat-top">—</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Score Médio</div>
+            <div class="stat-value" id="stat-media">—</div>
+        </div>
+    </div>
+
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+        <span class="toolbar-title">Lista de Colaboradores</span>
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Score</th>
+                <th>Chefe</th>
+                <th>Adicionar Pontos</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody id="tabela-body">
+            <tr>
+                <td colspan="6">Carregando...</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+
+        <div class="modal-title" id="modal-titulo">Novo Colaborador</div>
+
+        <input type="hidden" id="form-id">
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" id="form-nome" placeholder="Nome completo">
+        </div>
+
+        <div class="form-group">
+            <label>Senha</label>
+            <input type="password" id="form-senha" placeholder="••••••••">
+        </div>
+
+        <div class="form-group">
+            <label>Chefe</label>
+            <select id="form-chefe">
+                <option value="">Nenhum</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-ghost" onclick="fecharModal()">Cancelar</button>
+            <button class="btn btn-primary" onclick="salvar()">Salvar</button>
+        </div>
+
+    </div>
+</div>
+
+    <script src="js/colaboradores.js"></script>
+
+</body>
+</html>
