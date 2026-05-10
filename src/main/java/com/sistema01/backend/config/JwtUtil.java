@@ -26,6 +26,20 @@ public class JwtUtil {
                 .compact();
     }
 
+    public String gerarToken(String nome, String role) {
+        return Jwts.builder()
+                .setSubject(nome)
+                .claim("role", role)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRACAO))
+                .signWith(chave)
+                .compact();
+    }
+
+    public String extrairRole(String token) {
+        return getClaims(token).get("role", String.class);
+    }
+
     public String extrairNome(String token) {
         return getClaims(token).getSubject();
     }

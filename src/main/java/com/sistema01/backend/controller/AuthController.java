@@ -44,7 +44,7 @@ public class AuthController {
             return ResponseEntity.status(401).body("Senha incorreta");
         }
 
-        String token = jwtUtil.gerarToken(colaborador.getNome());
+        String token = jwtUtil.gerarToken(colaborador.getNome(), colaborador.getRole());
 
         return ResponseEntity.ok(new LoginResponse(token));
     }

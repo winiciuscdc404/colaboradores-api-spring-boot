@@ -20,6 +20,9 @@ public class BackendEntity {
     @Column(name = "SCORE")
     Integer score;
 
+    @Column(name = "ROLE")
+    String role;
+
     @ManyToOne
     @JoinColumn(name = "ID_CHEFE")
     @JsonIgnoreProperties("chefe")
@@ -47,6 +50,14 @@ public class BackendEntity {
 
     public String getSenha() {
         return senha;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public void setSenha(String senha) {
